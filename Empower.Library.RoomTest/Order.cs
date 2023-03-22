@@ -3,8 +3,8 @@
     using Nito.AsyncEx.Synchronous;
 
     using Skyline.DataMiner.CICD.Tools.WinEncryptedKeys.Lib;
-
-    using System.Net;
+	using System;
+	using System.Net;
     using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Security;
@@ -32,7 +32,7 @@
             // Key was setup using the dotnet tool Skyline.DataMiner.CICD.Tools.WinEncryptedKeys
             apiKey = Keys.RetrieveKey(keyName);
             name = orderValue;
-            suffix = " from room 'ThisIsABug'";
+            suffix = " from room 'Test' " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
         /// <summary>
